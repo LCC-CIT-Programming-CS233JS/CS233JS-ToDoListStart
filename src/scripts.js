@@ -90,17 +90,39 @@ function generateTaskHtml(task, index) {
     return `
       <li class="list-group-item checkbox">
         <div class="row">
-          <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
+          <div class="col-sm-1 pt-2 checkbox">
             <label><input id="toggleTaskStatus" type="checkbox" value="" class="" IS IT CHECKED></label>
           </div>
-          <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 task-text SHOULD IT HAVE THE CHECKED CLASS">
+          <div class="col-sm-10 task-text SHOULD IT HAVE THE CHECKED CLASS">
             TASK GOES HERE
           </div>
-          <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 delete-icon-area">
-            <a class="" href="/" ><i id="deleteTask" class="delete-icon glyphicon glyphicon-trash"></i></a>
+          <div class="col-sm-1 pt-2 delete-icon-area">
+            <a class="" href="/" ><i id="deleteTask" class="bi-trash delete-icon"></i></a>
           </div>
         </div>
       </li>
     `;
 }
-
+/* this is the completed version of generateTaskHtml
+function generateTaskHtml(task, index) {
+    return `
+      <li class="list-group-item checkbox">
+        <div class="row">
+          <div class="col-sm-1 pt-2 checkbox">
+            <label><input id="toggleTaskStatus" type="checkbox" value="" 
+            class="" ${(task.isComplete)?"checked":"" } 
+            onchange="toDo.toggleTaskStatus(${index})"/></label>
+          </div>
+          <div class="col-sm-10 task-text ${(task.isComplete)?"complete":"" }">
+            ${task.task}
+          </div>
+          <div class="col-sm-1 pt-2 delete-icon-area">
+            <a class="" href="/" onclick="toDo.deleteTask(event, ${index})">
+                <i id="deleteTask" class="bi-trash delete-icon"></i>
+            </a>
+          </div>
+        </div>
+      </li>
+    `;
+}
+*/
