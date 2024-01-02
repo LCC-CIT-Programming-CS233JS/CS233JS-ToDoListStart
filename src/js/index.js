@@ -56,8 +56,8 @@
             You can do this by calling the reduce method on the array
             It manipulates each element of an array to produce ONE result
                 let tasksHtml = this.tasks.reduce(
-                    (html, task, index) => html += this.generateTaskHtml(task, index), 
-                    '')
+                    (html, task, index) => html += this.generateTaskHtml(task), ''
+                    )
         -   Set contents of the taskList element on the page to the tasksHtml variable
         -   Call the method addEventHandlers.  Eventually this will add the event handlers
             to the checkbox and delete icon for each task on the page.
@@ -123,7 +123,7 @@
     Use and arrow or anonymous function
 */
 
-function generateTaskHtml(task, index) {
+function generateTaskHtml(task) {
     return `
       <li class="list-group-item checkbox">
         <div class="row">
@@ -142,7 +142,7 @@ function generateTaskHtml(task, index) {
 }
 
 /* this is the completed version of generateTaskHtml
-function generateTaskHtml(task, index) {
+function generateTaskHtml(task) {
     return `
       <li class="list-group-item checkbox">
         <div class="row">
